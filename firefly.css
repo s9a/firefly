@@ -1,0 +1,41 @@
+@supports (--firefly: 9) {
+  .firefly *,
+  .firefly {
+    --firefly-hyper: -36deg;
+    --firefly-hover: -72deg;
+    --firefly-focus: -108deg;
+    --firefly-angle: 0deg;
+    --firefly-image: none;
+    --firefly-glow: #528;
+    --firefly-feel: #fa8;
+    --firefly-film: hue-rotate(
+      var(--firefly-angle)
+    );
+    color: var(--firefly-glow);
+    outline-color: var(--firefly-glow);
+    background-color: var(--firefly-feel);
+    background-image: var(--firefly-image);
+    filter: var(--firefly-film);
+  }
+
+  .firefly:any-link,
+  .firefly :any-link {
+    --firefly-angle: -60deg;
+  }
+
+  .firefly:focus,
+  .firefly :focus {
+    --firefly-angle: -30deg;
+  }
+
+  .firefly:any-link:hover,
+  .firefly :any-link:hover {
+    --firefly-angle: -72deg;
+  }
+}
+
+/* wait for attr angle support instead of this
+[data-firefly=30deg] { --firefly-angle: 30deg }
+[data-firefly=36deg] { --firefly-angle: 36deg }
+... sparks fly
+*/
